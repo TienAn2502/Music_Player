@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+       body {
+           font-family: Arial, sans-serif;
+           display: -webkit-box;
+           display: -ms-flexbox;
+           display: flex;
+           -webkit-box-pack: center;
+               -ms-flex-pack: center;
+                   justify-content: center;
+           -webkit-box-align: center;
+               -ms-flex-align: center;
+                   align-items: center;
+           height: auto;
+           margin: 0;
+           padding: 0;
+       }
+
+       .container {
+           display: -webkit-box;
+           display: -ms-flexbox;
+           display: flex;
+           -webkit-box-orient: vertical;
+           -webkit-box-direction: normal;
+               -ms-flex-direction: column;
+                   flex-direction: column;
+           -webkit-box-align: center;
+               -ms-flex-align: center;
+                   align-items: center;
+           width: 100%;
+           max-width: 480px;
+           height: auto;
+           margin-top: 40px;
+
+       }
+
+       .dashboard {
+           padding: 20px;
+           background-color: rgba(255, 255, 255, 0.9);
+           border: 1px solid #0B5f89;
+           border-radius: 24px;
+           -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+           width: 500px;
+           margin-bottom: 20px;
+           /* Space between the player and the "Up Next" section */
+       }
+
+       .status {
+           text-align: center;
+       }
+
+       .img-song {
+           padding: 16px 0;
+           text-align: center;
+           overflow: hidden;
+       }
+
+       .img-song img {
+           border-radius: 50%;
+           width: 200px;
+           height: 200px;
+       }
+
+       .controls {
+           display: -webkit-box;
+           display: -ms-flexbox;
+           display: flex;
+           -ms-flex-pack: distribute;
+               justify-content: space-around;
+           -webkit-box-align: center;
+               -ms-flex-align: center;
+                   align-items: center;
+           margin: 20px 0;
+           width: auto;
+       }
+
+       /* Thiết kế nút Play/Pause với vòng tròn bao quanh */
+       .control-button {
+           background: none;
+           border: none;
+           font-size: 24px;
+           cursor: pointer;
+           display: -webkit-box;
+           display: -ms-flexbox;
+           display: flex;
+           -webkit-box-pack: center;
+               -ms-flex-pack: center;
+                   justify-content: center;
+           -webkit-box-align: center;
+               -ms-flex-align: center;
+                   align-items: center;
+           position: relative;
+       }
+
+       /* Vòng tròn bao quanh nút Play/Pause */
+       #play {
+           width: 80px;
+           height: 80px;
+           border-radius: 50%;
+           background-color: #ffffff;
+           border: 6px solid transparent;
+           /* Mặc định vòng tròn trong suốt */
+           display: -webkit-box;
+           display: -ms-flexbox;
+           display: flex;
+           -webkit-box-pack: center;
+               -ms-flex-pack: center;
+                   justify-content: center;
+           -webkit-box-align: center;
+               -ms-flex-align: center;
+                   align-items: center;
+           -webkit-transition: border-color 0.3s ease;
+           -o-transition: border-color 0.3s ease;
+           transition: border-color 0.3s ease;
+           -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+       }
+
+
+       /* Thiết kế cho các nút điều khiển khác */
+       .control-button .material-icons {
+           font-size: 36px;
+       }
+
+       /* Hiệu ứng hover cho các nút */
+       #play:hover {
+           -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+                   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+       }
+
+       #progress {
+           width: 100%;
+           margin: 0 20px;
+         accent-color: #C0392B;
+   }
+       /* Mouse-over effects */
+       #progress:hover {
+           opacity: 1;
+           /* Fully shown on mouse-over */
+       }
+    #volume-slider 
+    {
+        accent-color: #2C3E50;
+    }
+       .up-next {
+           width: 100%;
+           max-width: 480px;
+           text-align: left;
+       }
+
+       .up-next h3 {
+           margin-bottom: 20px;
+       }
+
+       #up-next-list {
+           list-style: none;
+           padding: 0;
+           margin: 0;
+           display: -webkit-box;
+           display: -ms-flexbox;
+           display: flex;
+           /* Hiển thị danh sách ngang */
+           -ms-flex-wrap: wrap;
+               flex-wrap: wrap;
+           /* Để các phần tử có thể xuống dòng nếu cần */
+       }
+
+       #up-next-list li {
+           display: -webkit-box;
+           display: -ms-flexbox;
+           display: flex;
+           -webkit-box-align: center;
+               -ms-flex-align: center;
+                   align-items: center;
+           width: 470px;
+           margin: 10px;
+           background-color: #f5f5f5;
+           /* Nền của các phần tử danh sách */
+           padding: 10px;
+           -ms-flex-wrap: wrap;
+               flex-wrap: wrap;
+           border-radius: 10px;
+           -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+           /* Đổ bóng để tạo hiệu ứng nổi bật */
+       }
+
+       #up-next-list img {
+           width: 50px;
+           height: 50px;
+           border-radius: 50%;
+           margin-right: 10px;
+       }
+
+       .list-item span {
+           font-weight: bold;
+           margin-bottom: 5px;
+           display: block;
+           /* Đảm bảo tiêu đề bài hát nằm trên cùng */
+       }
+
+       .list-item p {
+margin-top: 5px;
+    text-align: left;
+           display: block;
+       }
+
+       .list-item div {
+           display: -webkit-box;
+           display: -ms-flexbox;
+           display: flex;
+           -webkit-box-orient: vertical;
+           -webkit-box-direction: normal;
+               -ms-flex-direction: column;
+                   flex-direction: column;
+        margin-top: 15px;
+            margin-left: 10px;
+           /* Đặt tên bài hát và tên tác giả theo cột */
+       }
+
+       .list-item.active {
+           border: 4px solid#ec1f55;
+       }
+
+       #shuffle.actived {
+           color: #ec1f55 !important;
+       }
+
+       #repeat.actived {
+           color: #ec1f55;
+       }
+
+       #song-image {
+           width: 200px;
+           height: 200px;
+           border-radius: 50%;
+           -webkit-transition: -webkit-transform 0.3s;
+           transition: -webkit-transform 0.3s;
+           -o-transition: transform 0.3s;
+           transition: transform 0.3s;
+           transition: transform 0.3s, -webkit-transform 0.3s;
+           /* Hiệu ứng chuyển động */
+       }
+
+       #particles-js {
+           position: absolute;
+           width: 100%;
+           height: 100%;
+           top: 0;
+           left: 0;
+           z-index: -1;
+           /* Đưa hiệu ứng ra phía sau nội dung chính */
+       }
+
+       .bi-volume- {
+           font-size: 20px;
+       }
+
+       @media screen and (min-width: 394px) and (max-width:1041px) {
+
+           /*6.7 inches*/
+           .dashboard {
+               max-width: 80% !important;
+           }
+
+           #volume-slider {
+               margin-right: 40px;
+           }
+
+           #progress {
+               width: 100%;
+               max-width: 90%;
+           }
+
+         
+
+           .list-item {
+               max-width: 400px;
+               
+           }
+           .list-item div 
+           {
+            margin-top: 15px;
+            margin-left: 10px;
+           }
+           .list-item span 
+           {
+            text-align: left;
+           }
+           .list-item p 
+           {
+            margin-top: 5px;
+            text-align: left;
+           }
+
+           .up-next {
+              width: 80%;
+              text-align: center;
+           }
+
+           #prev,
+           #shuffle,
+           #repeat,
+           #next,
+           #play {
+               color: black;
+           }
+
+           .volum {
+               display: none !important;
+           }
+       }
+
+       @media screen and (max-width: 394px) {
+
+           /* 6.1 inches*/
+           .dashboard {
+               max-width: 80% !important;
+             margin-right: 2px;
+             margin-left: 2px;
+               margin-top: 10px;
+              text-align: center;
+           }
+
+           #volume-slider {
+               margin-right: 40px;
+           }
+
+           #progress {
+               width: 100%;
+               max-width: 90%;
+           }
+
+          
+           .list-item {
+               max-width: 330px;
+           }
+            .list-item div {
+             margin-top: 15px;
+             margin-left: 5px;
+             max-width: 75%;
+            }
+            
+            .list-item span {
+                text-align: left;
+            }
+            
+            .list-item p {
+                margin-top: 5px;
+                text-align: left;
+                font-size: 15px;
+            }
+
+           .up-next {
+            width: 80%;
+                text-align: center;
+           }
+
+           .controls {
+               max-width: 100%;
+           }
+
+           .control-button {
+               font-size: 15px;
+           }
+
+           #prev,
+           #shuffle,
+           #repeat,
+           #next,
+           #play {
+               color: black;
+           }
+
+           .volum {
+               display: none !important;
+           }
+       }
